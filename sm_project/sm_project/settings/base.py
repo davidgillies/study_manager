@@ -42,10 +42,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+)
+
+MY_APPS = (
     'mrc_dashboard',
     'study_manager',
     'viz_app',
 )
+
+INSTALLED_APPS += MY_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
