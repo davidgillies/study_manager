@@ -1,6 +1,6 @@
 from django.core.urlresolvers import resolve
 from django.test import TestCase
-from dashboard.views import index
+from mrc_dashboard.views import index
 from django.http import HttpRequest
 
 
