@@ -1,0 +1,6 @@
+- r base.txt
+autopep8==1.1
+coverage==3.7.1
+pep8==1.5.7
+selenium==2.44.0
+
