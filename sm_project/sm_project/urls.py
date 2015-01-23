@@ -9,4 +9,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^$', 'mrc_dashboard.views.index', name='home'),
+    url(r'^study_manager/', include('study_manager.urls'), 
+        name='study_manager'),
 )

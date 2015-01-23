@@ -19,6 +19,10 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.get('http://localhost:8000')
         self.assertIn('Dashboard', self.browser.title)
 
+    def test_study_is_there(self):
+        self.browser.get('http://localhost:8000/study_manager/')
+        self.assertIn('Fenland', self.browser.title)
+
 
 if __name__ == '__main__':
     unittest.main()
