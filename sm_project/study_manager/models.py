@@ -28,16 +28,16 @@ class Surgery(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.id:
-            log(user=self.user, action='added', extra={'Name':self.Name})
+            log(user=self.user, action='added', extra={'Name':self.name})
         else:
-            log(user=self.user, action='updated', extra={'Name':self.Name})
+            log(user=self.user, action='updated', extra={'Name':self.name})
         super(Surgery, self).save(*args, **kwargs)
     
     def __unicode__(self):
-        return self.Name
+        return self.name
 
     def __str__(self):
-        return self.Name
+        return self.name
 
 
 class GP(models.Model):
@@ -51,16 +51,16 @@ class GP(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.id:
-            log(user=self.user, action='added',  extra={'Name':self.GPName})
+            log(user=self.user, action='added',  extra={'Name':self.gp_name})
         else:
-            log(user=self.user, action='updated', extra={'Name':self.GPName})
+            log(user=self.user, action='updated', extra={'Name':self.gp_name})
         super(GP, self).save(*args, **kwargs)
     
     def __unicode__(self):
-        return self.GPName
+        return self.gp_name
 
     def __str__(self):
-        return self.GPName
+        return self.gp_name
 
 
 class Volunteer(models.Model):
@@ -103,16 +103,16 @@ class Volunteer(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.id:
-            log(user=self.user, action='added',  extra={'Name':self.Surname})
+            log(user=self.user, action='added',  extra={'Name':self.surname})
         else:
-            log(user=self.user, action='updated', extra={'Name':self.Surname})
+            log(user=self.user, action='updated', extra={'Name':self.surname})
         super(Volunteer, self).save(*args, **kwargs)
     
     def __unicode__(self):
-        return '%s %s' % (self.ForeNames, self.Surname)
+        return '%s %s' % (self.fore_names, self.surname)
 
     def __str__(self):
-        return '%s %s' % (self.ForeNames, self.Surname)
+        return '%s %s' % (self.fore_names, self.surname)
 
 
 class Appointment(models.Model):
@@ -132,13 +132,13 @@ class Appointment(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.id:
-            log(user=self.user, action='added',  extra={'Date':self.AppDate, 'Time': self.AppTime})
+            log(user=self.user, action='added',  extra={'Date':self.app_date, 'Time': self.app_time})
         else:
-            log(user=self.user, action='updated', extra={'Date':self.AppDate, 'Time': self.AppTime})
+            log(user=self.user, action='updated', extra={'Date':self.app_date, 'Time': self.app_time})
         super(Appointment, self).save(*args, **kwargs)
     
     def __unicode__(self):
-        return '%s %s' % (self.VolunteerID.ForeNames, self.VolunteerID.Surname)
+        return '%s %s' % (self.volunteer_id.fore_names, self.voluntee_id.surname)
 
     def __str__(self):
-        return '%s %s' % (self.VolunteerID.ForeNames, self.VolunteerID.Surname)
+        return '%s %s' % (self.volunteer_id.fore_names, self.volunteer_id.surname)

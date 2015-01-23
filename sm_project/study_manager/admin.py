@@ -3,7 +3,7 @@ from .models import *
 
 
 class VolunteerAdmin(admin.ModelAdmin):
-    search_fields = ['volunteer_id', 'surname', 'forenames', 'created', 
+    search_fields = ['volunteer_id', 'surname', 'fore_names', 'created', 
                      'modified', 'surgery_id__name']
 
     def save_model(self, request, obj, form, change):
