@@ -3,5 +3,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("""<!doctype html><html><head><title>Fenland</title></head>
-    </html>""")
+    return render(request, 'study_manager/home_page.html')

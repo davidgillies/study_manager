@@ -10,6 +10,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.implicitly_wait(3)
 
     def tearDown(self):
+        self.browser.refresh()
         self.browser.quit()
 
     # Susie has to use this hopeless setup to manage studies...
@@ -21,7 +22,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_study_is_there(self):
         self.browser.get('http://localhost:8000/study_manager/')
-        self.assertIn('Fenland', self.browser.title)
+        self.assertIn('Study Admin', self.browser.title)
 
 
 if __name__ == '__main__':

@@ -1,5 +1,9 @@
 - r base.txt
+Werkzeug==0.9.6
 autopep8==1.1
+django-coverage==1.2.4
+django-debug-toolbar==1.2.2
+django-extensions==1.4.9
 coverage==3.7.1
 pep8==1.5.7
 selenium==2.44.0

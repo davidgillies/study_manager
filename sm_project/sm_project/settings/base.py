@@ -42,6 +42,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_coverage',
+    'debug_toolbar',
+    'django_extensions',
+    'eventlog',
 )
 
 MY_APPS = (
@@ -100,6 +104,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 
 # Static files (CSS, JavaScript, Images)
