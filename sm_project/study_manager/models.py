@@ -138,7 +138,7 @@ class Appointment(models.Model):
         super(Appointment, self).save(*args, **kwargs)
     
     def __unicode__(self):
-        return '%s %s' % (self.volunteer_id.fore_names, self.voluntee_id.surname)
+        return '%s %s' % (self.volunteer_id.fore_names, self.volunteer_id.surname)
 
     def __str__(self):
         return '%s %s' % (self.volunteer_id.fore_names, self.volunteer_id.surname)

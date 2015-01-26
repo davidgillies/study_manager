@@ -5,6 +5,7 @@ from .models import *
 class VolunteerAdmin(admin.ModelAdmin):
     search_fields = ['volunteer_id', 'surname', 'fore_names', 'created', 
                      'modified', 'surgery_id__name']
+    date_hierarchy = 'dob'
 
     def save_model(self, request, obj, form, change):
         obj.user = request.user
@@ -14,7 +15,7 @@ admin.site.register(Volunteer, VolunteerAdmin)
 
 
 class AppointmentAdmin(admin.ModelAdmin):
-    search_fields = ['app_date', 'created', 'modified', 'app_status']
+    search_fields = ['volunteer_id__surname', 'volunteer_id__fore_names', 'app_date', 'created', 'modified', 'app_status']
 
     def save_model(self, request, obj, form, change):
         obj.user = request.user
