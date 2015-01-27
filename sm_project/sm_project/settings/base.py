@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'django_extensions',
     'eventlog',
+    'rest_framework',
 )
 
 MY_APPS = (
