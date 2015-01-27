@@ -1,4 +1,3 @@
-from django.forms import widgets
 from rest_framework import serializers
 from study_manager.models import Volunteer, Appointment, Surgery, GP
 

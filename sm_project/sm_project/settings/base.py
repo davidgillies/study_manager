@@ -94,6 +94,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGINATE_BY': 10
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
@@ -112,5 +117,7 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
+
+STATIC_ROOT = 'U:/Data/show_case/study_manager/sm_project/static'
 
 STATIC_URL = '/static/'
