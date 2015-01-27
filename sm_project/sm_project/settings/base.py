@@ -26,7 +26,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SITE_ID=1 # fix for admin-tools
+SITE_ID = 1  # fix for admin-tools
 
 # Application definition
 

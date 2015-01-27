@@ -9,7 +9,6 @@ router.register(r'surgeries', views.SurgeryViewSet)
 router.register(r'gps', views.GPViewSet)
 
 urlpatterns = patterns('',
-    # url(r'^$', views.Index.as_view(), name='index'),
     url(r'^$', 'study_manager.views.index', name='index'),
     url(r'^api/', include(router.urls)),
 )
