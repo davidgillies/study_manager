@@ -8,4 +8,5 @@ urlpatterns = patterns('',
     url(r'^$', 'mrc_dashboard.views.index', name='home'),
     url(r'^study_manager/', include('study_manager.urls'),
         name='study_manager'),
+    url(r'^admin_locking/', include('admin_locking.urls')),
 )

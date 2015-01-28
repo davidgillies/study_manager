@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'eventlog',
     'rest_framework',
+    'admin_locking',
 )
 
 MY_APPS = (

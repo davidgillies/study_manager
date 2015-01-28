@@ -1,8 +1,9 @@
 from django.contrib import admin
 from .models import *
+from admin_locking.admin import LockingAdmin
 
 
-class VolunteerAdmin(admin.ModelAdmin):
+class VolunteerAdmin(LockingAdmin):
     search_fields = ['volunteer_id', 'surname', 'fore_names', 'created', 
                      'modified', 'surgery_id__name']
     date_hierarchy = 'dob'
@@ -14,7 +15,7 @@ class VolunteerAdmin(admin.ModelAdmin):
 admin.site.register(Volunteer, VolunteerAdmin)
 
 
-class AppointmentAdmin(admin.ModelAdmin):
+class AppointmentAdmin(LockingAdmin):
     search_fields = ['volunteer_id__surname', 'volunteer_id__fore_names', 'app_date', 'created', 'modified', 'app_status']
 
     def save_model(self, request, obj, form, change):
@@ -24,7 +25,7 @@ class AppointmentAdmin(admin.ModelAdmin):
 admin.site.register(Appointment, AppointmentAdmin)
 
 
-class SurgeryAdmin(admin.ModelAdmin):
+class SurgeryAdmin(LockingAdmin):
 
     search_fields = ['name', 'post_code', 'created', 'modified']
 
@@ -35,7 +36,7 @@ class SurgeryAdmin(admin.ModelAdmin):
 admin.site.register(Surgery, SurgeryAdmin)
 
 
-class GPAdmin(admin.ModelAdmin):
+class GPAdmin(LockingAdmin):
     search_fields = ['gp_name', 'created', 'modified']
 
     def save_model(self, request, obj, form, change):
